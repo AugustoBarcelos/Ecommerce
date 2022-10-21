@@ -31,11 +31,14 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
   const products = await apiFeatures.query;
 
-  res.status(200).json({
-    sucess: true,
-    productsCount,
-    products
-  })
+  setTimeout(() => {
+    res.status(200).json({
+      sucess: true,
+      productsCount,
+      products
+    })
+  }, 1200);
+
 })
 
 //Get single product => api/v1/product/:id
