@@ -8,18 +8,18 @@ import ProductDetails from './components/product/ProductDetails';
 
 function App() {
   return (
-    <Routes>
-      <Router>
-        <div className="App">
-          <Header />
-          <div className="container container-fluid">
-            <Route path="/" component={Home} exact />
-            <Route path="/product/:id" component={ProductDetails} exact />
-          </div>
-          <Footer />
+    <Router>
+      <div className="App">
+        <Header />
+        <div className="container container-fluid">
+          <Routes>
+            <Route path="/" element={<Home />} exact />
+            <Route path="/product/:id" element={<ProductDetails />} />
+          </Routes>
         </div>
-      </Router>
-    </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
