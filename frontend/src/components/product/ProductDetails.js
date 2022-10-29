@@ -5,21 +5,24 @@ import { useAlert } from 'react-alert'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { Carousel } from 'react-bootstrap'
+import { useParams } from 'react-router-dom';
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
+  const params = useParams();
+
   const { loading, error, product } = useSelector(state => state.productDetails)
   useEffect(() => {
-    dispatch(getProductDetails(match.params.id))
-    
+    dispatch(getProductDetails(params.id))
+
 
     if (error) {
       alert.error(error);
       dispatch(clearErrors())
     }
-  }, [dispatch, alert, error, match.params.id])
+  }, [dispatch, alert, error, params.id])
 
   return (
     <Fragment>
