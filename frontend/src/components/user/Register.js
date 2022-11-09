@@ -40,11 +40,8 @@ const Register = ({ history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.set('name', name);
-    formData.set('email', email);
-    formData.set('password', password);
-    formData.set('avatar', avatar);
+  const formData = { name, email, password, avatar };
+
 
     dispatch(register(formData))
   }
