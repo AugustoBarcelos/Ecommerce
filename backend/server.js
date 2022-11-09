@@ -22,7 +22,6 @@ connectDatabase();
 const server = app.listen(process.env.PORT, () => {
   console.log(`Server Start on PORT: ${process.env.PORT} in process ${process.env.NODE_ENV}`);
 })
-
 // Handle unhnadled promise rejections
 process.on('unhandledRejection', err => {
   console.log(`Error: ${err.message}`);

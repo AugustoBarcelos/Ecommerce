@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
 const path = require('path')
+const dotenv = require('dotenv');
+
 
 const cookieParser = require('cookie-parser');
 const bodyparser = require('body-parser');
 const cloudinary = require('cloudinary');
 
 const errorMiddleware = require('./middlewares/errors');
+
+//Setting up config file
+dotenv.config({ path: '../backend/config/config.env' })
 
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -20,6 +25,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 })
 
+console.log(`The cloudinary api key is: ${process.env.CLOUDINARY_API_KEY}`);
 
 //Import all routes
 const products = require('./routes/products');
