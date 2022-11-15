@@ -20,9 +20,9 @@ import NewPassword from './components/user/NewPassword';
 
 function App() {
 
-  useEffect(() => {
-    store.dispatch(loadUser())
-  }, [])
+  // useEffect(() => {
+  //   store.dispatch(loadUser())
+  // }, [])
 
   return (
     <Router>

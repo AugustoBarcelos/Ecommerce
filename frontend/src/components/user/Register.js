@@ -40,7 +40,7 @@ const Register = ({ history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-  const formData = { name, email, password, avatar };
+    const formData = { name, email, password, avatar };
 
 
     dispatch(register(formData))
